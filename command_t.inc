@@ -26,7 +26,7 @@ enum Command {
 /**
  * Defines the maximum length for the description field of a command
  */
-#define command_Desc_length 63
+#define command_Desc_length 255
 
 enum command_t {
     /**
