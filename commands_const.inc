@@ -42,7 +42,7 @@
  * STOCKS
  ******************************************************************************/
 
-stock readCustomFlags(const flags[], Logger: logger = Invalid_Logger) {
+stock readCustomFlags(const flags[]) {
   new bits = 0;
   for (new i = 0, ch = flags[i]; ch != EOS; ch = flags[++i]) {
     switch (ch) {
