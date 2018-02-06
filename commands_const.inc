@@ -46,16 +46,16 @@ stock readCustomFlags(const flags[]) {
   new bits = 0;
   for (new i = 0, ch = flags[i]; ch != EOS; ch = flags[++i]) {
     switch (ch) {
-      case FLAG_METHOD_SAY_CH:      setFlag(bits, FLAG_METHOD_SAY, logger);
-      case FLAG_METHOD_SAY_TEAM_CH: setFlag(bits, FLAG_METHOD_SAY_TEAM, logger);
+      case FLAG_METHOD_SAY_CH:      setFlag(bits, FLAG_METHOD_SAY);
+      case FLAG_METHOD_SAY_TEAM_CH: setFlag(bits, FLAG_METHOD_SAY_TEAM);
 
-      case FLAG_STATE_ALIVE_CH:     setFlag(bits, FLAG_STATE_ALIVE, logger);
-      case FLAG_STATE_DEAD_CH:      setFlag(bits, FLAG_STATE_DEAD, logger);
+      case FLAG_STATE_ALIVE_CH:     setFlag(bits, FLAG_STATE_ALIVE);
+      case FLAG_STATE_DEAD_CH:      setFlag(bits, FLAG_STATE_DEAD);
 
-      case FLAG_TEAM_UNASSIGNED_CH: setFlag(bits, FLAG_TEAM_UNASSIGNED, logger);
-      case FLAG_TEAM_T_CH:          setFlag(bits, FLAG_TEAM_T, logger);
-      case FLAG_TEAM_CT_CH:         setFlag(bits, FLAG_TEAM_CT, logger);
-      case FLAG_TEAM_SPECTATOR_CH:  setFlag(bits, FLAG_TEAM_SPECTATOR, logger);
+      case FLAG_TEAM_UNASSIGNED_CH: setFlag(bits, FLAG_TEAM_UNASSIGNED);
+      case FLAG_TEAM_T_CH:          setFlag(bits, FLAG_TEAM_T);
+      case FLAG_TEAM_CT_CH:         setFlag(bits, FLAG_TEAM_CT);
+      case FLAG_TEAM_SPECTATOR_CH:  setFlag(bits, FLAG_TEAM_SPECTATOR);
 
       case FLAG_SEPARATOR:          continue;
 
@@ -66,37 +66,37 @@ stock readCustomFlags(const flags[]) {
   return bits;
 }
 
-stock getCustomFlags(const bits, flags[], len, Logger: logger = Invalid_Logger) {
+stock getCustomFlags(const bits, flags[], len) {
   new copyLen = 0;
-  if (isFlagSet(bits, FLAG_METHOD_SAY, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_METHOD_SAY) && copyLen <= len) {
     flags[copyLen++] = FLAG_METHOD_SAY_CH;
   }
 
-  if (isFlagSet(bits, FLAG_METHOD_SAY_TEAM, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_METHOD_SAY_TEAM) && copyLen <= len) {
     flags[copyLen++] = FLAG_METHOD_SAY_TEAM_CH;
   }
 
-  if (isFlagSet(bits, FLAG_STATE_ALIVE, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_STATE_ALIVE) && copyLen <= len) {
     flags[copyLen++] = FLAG_STATE_ALIVE_CH;
   }
 
-  if (isFlagSet(bits, FLAG_STATE_DEAD, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_STATE_DEAD) && copyLen <= len) {
     flags[copyLen++] = FLAG_STATE_DEAD_CH;
   }
 
-  if (isFlagSet(bits, FLAG_TEAM_UNASSIGNED, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_TEAM_UNASSIGNED) && copyLen <= len) {
     flags[copyLen++] = FLAG_TEAM_UNASSIGNED_CH;
   }
 
-  if (isFlagSet(bits, FLAG_TEAM_T, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_TEAM_T) && copyLen <= len) {
     flags[copyLen++] = FLAG_TEAM_T_CH;
   }
 
-  if (isFlagSet(bits, FLAG_TEAM_CT, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_TEAM_CT) && copyLen <= len) {
     flags[copyLen++] = FLAG_TEAM_CT_CH;
   }
 
-  if (isFlagSet(bits, FLAG_TEAM_SPECTATOR, logger) && copyLen <= len) {
+  if (isFlagSet(bits, FLAG_TEAM_SPECTATOR) && copyLen <= len) {
     flags[copyLen++] = FLAG_TEAM_SPECTATOR_CH;
   }
 
