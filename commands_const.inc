@@ -27,17 +27,17 @@
 
 #define BITS_METHOD_SAY      1
 #define BITS_METHOD_SAY_TEAM 2
-#define BITS_METHODS         3
+#define BITS_METHOD_MASK     3
 
 #define BITS_STATE_ALIVE     4
 #define BITS_STATE_DEAD      8
-#define BITS_STATES          12
+#define BITS_STATE_MASK      12
 
 #define BITS_TEAM_UNASSIGNED 16
 #define BITS_TEAM_T          32
 #define BITS_TEAM_CT         64
 #define BITS_TEAM_SPECTATOR  128
-#define BITS_TEAMS           240
+#define BITS_TEAM_MASK       240
 
 #define FLAG_SEPARATOR          ','
 
